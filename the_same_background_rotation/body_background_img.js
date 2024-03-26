@@ -51,10 +51,9 @@ const get_backgroundImagePath = () => {
             })
         })
         .catch(error=> {
-            console.log("error: ", error);         
+            console.log("error: ", error);
         });
 };
-
 // 更新時間和背景圖片
 const update_time_and_background = () => {
     const now = new Date();
@@ -113,8 +112,8 @@ const update_time_and_background = () => {
     }, 1000); // 設定每秒執行一次
 }
 
-update_time_and_background(); // 呼叫更新時間和背景函數
-
+update_time_and_background();  // 呼叫更新時間和背景函數
+get_backgroundImagePath();  //取得背景資料
 
 // 定義 API Key 和相關參數
 // 原本在使用的api 但會暴露api key 改為用express
