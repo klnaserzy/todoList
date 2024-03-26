@@ -15,30 +15,6 @@ const backgroundImagePath = [
     }
 ];
 
-// 當文檔加載完成時執行
-// window.onload = function() {
-//     // 從 Express 服務器獲取數據
-//     fetch('http://localhost:3000')
-//         .then(response => response.json())
-//         .then(data => {
-//             const {photos} = data;
-//             // 將從 Express 獲取的圖片數據添加到 backgroundImagePath 中
-//             photos.forEach(el => {
-//                 backgroundImagePath.push({
-//                     "imgUrl": el.src.landscape,
-//                     "photographer": el.photographer,
-//                     "photographer_url": el.photographer_url
-//                 })
-//             });
-//             console.log(backgroundImagePath); // 輸出 backgroundImagePath 到控制台
-//         })
-//         .catch(error => {
-//             // 如果發生錯誤，記錄錯誤信息並執行 get_backgroundImagePath 函數
-//             console.error('Error fetching environment variables:', error);
-//             get_backgroundImagePath();            
-//         });
-// };
-
 // 練習fetch 當未能從 Pexels 獲取圖片時，從本地 JSON 文件中獲取
 const get_backgroundImagePath = () => {
     fetch('./background_image_path.json')  //背景json檔案 其實數量不多可以直接用陣列儲存

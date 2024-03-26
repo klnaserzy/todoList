@@ -16,28 +16,28 @@ const backgroundImagePath = [
 ];
 
 // 當文檔加載完成時執行
-// window.onload = function() {
-//     // 從 Express 服務器獲取數據
-//     fetch('http://localhost:3000')
-//         .then(response => response.json())
-//         .then(data => {
-//             const {photos} = data;
-//             // 將從 Express 獲取的圖片數據添加到 backgroundImagePath 中
-//             photos.forEach(el => {
-//                 backgroundImagePath.push({
-//                     "imgUrl": el.src.landscape,
-//                     "photographer": el.photographer,
-//                     "photographer_url": el.photographer_url
-//                 })
-//             });
-//             console.log(backgroundImagePath); // 輸出 backgroundImagePath 到控制台
-//         })
-//         .catch(error => {
-//             // 如果發生錯誤，記錄錯誤信息並執行 get_backgroundImagePath 函數
-//             console.error('Error fetching environment variables:', error);
-//             get_backgroundImagePath();            
-//         });
-// };
+window.onload = function() {
+    // 從 Express 服務器獲取數據
+    fetch('http://localhost:3000')
+        .then(response => response.json())
+        .then(data => {
+            const {photos} = data;
+            // 將從 Express 獲取的圖片數據添加到 backgroundImagePath 中
+            photos.forEach(el => {
+                backgroundImagePath.push({
+                    "imgUrl": el.src.landscape,
+                    "photographer": el.photographer,
+                    "photographer_url": el.photographer_url
+                })
+            });
+            console.log(backgroundImagePath); // 輸出 backgroundImagePath 到控制台
+        })
+        .catch(error => {
+            // 如果發生錯誤，記錄錯誤信息並執行 get_backgroundImagePath 函數
+            console.error('Error fetching environment variables:', error);
+            get_backgroundImagePath();            
+        });
+};
 
 // 練習fetch 當未能從 Pexels 獲取圖片時，從本地 JSON 文件中獲取
 const get_backgroundImagePath = () => {
@@ -61,7 +61,7 @@ const update_time_and_background = () => {
     const year = now.getFullYear();
     const month = now.getMonth();
     const date = now.getDate();
-    const set_background_change_time = 5;  //設定背景變換的秒數
+    const set_background_change_time = 30;  //設定背景變換的秒數
     let change_background_timer = 0;  //計時器
     let background_Image_index = 0;
 
@@ -114,47 +114,3 @@ const update_time_and_background = () => {
 }
 
 update_time_and_background(); // 呼叫更新時間和背景函數
-
-
-// 定義 API Key 和相關參數
-// 原本在使用的api 但會暴露api key 改為用express
-// const api_key = "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ";
-// const searchQuery = "nature";
-// const per_page = 10;
-// const pexelsUrl = `https://api.pexels.com/v1/search?query=${searchQuery}&per_page=${per_page}`;
-//
-//取得pexels的圖片
-// fetch(pexelsUrl, { header })
-//     .then(response => {
-//         console.log("狀態: ", response.status);
-    
-//         if(response.ok){
-//             const limit = response.headers.get("X-Ratelimit-Limit");
-//             const remaining = response.headers.get("X-Ratelimit-Remaining");
-//             const reset = response.headers.get("X-Ratelimit-Remaining");
-    
-//             console.log("每月配額: ", limit);
-//             console.log("剩餘次數: ", remaining);
-//             console.log("每月重置: ", reset);
-    
-//             return response.json();
-//         }else{
-//             console.log("請求失敗: ", response.status, response.status.statusText);
-//             get_backgroundImagePath();
-//       }
-//     })
-//     .then(data => {
-//         const {photos} = data;
-//         photos.forEach(el => {
-//             backgroundImagePath.push({
-//                 "imgUrl": el.src.landscape,
-//                 "photographer": el.photographer,
-//                 "photographer_url": el.photographer_url
-//             })
-//         });
-//         console.log(backgroundImagePath);
-//     })
-//     .catch(error => {
-//         console.log("網路錯誤: ", error);
-//         get_backgroundImagePath();
-//     });
