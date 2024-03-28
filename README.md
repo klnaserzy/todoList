@@ -8,3 +8,6 @@ https://klnaserzy.github.io/todoList/the_same_background_rotation/index.html
 下面這個暫時還沒處理 之後再弄  
 **pexels_search_rotation**  
 https://klnaserzy.github.io/todoList/pexels_search_rotation/index.html
+  
+
+還未處理RWD部分 所以手機之類的使用會錯位
