@@ -181,10 +181,13 @@ a {
 
 #yearMon {
     margin-top: 6%;
-    margin-left: 85%;
+    margin-left: 80%;
     font-size: 16px;
     letter-spacing: 1px;
     color: #fff;
+    background-color:#31313181;
+    border-radius: 10px 10px 0px 0px;
+    padding: 2px 10px;
 }
 
 #nowDate {
@@ -192,19 +195,11 @@ a {
     font-size: 48px;
     letter-spacing: 1px;
     color: #fff;
-}
-
-.timeContainer1 {
     background-color:#31313181;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 0px 7px 10px 10px;
     padding: 2px 10px;
 }
 
-.timeContainer2 {
-    background-color:#31313181;
-    border-radius: 10px 7px 10px 10px;
-    padding: 2px 10px;
-}
 
 #todoList {
     margin-left: 38%;
