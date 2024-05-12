@@ -36,7 +36,7 @@ const update_time_and_background = () => {
     const year = now.getFullYear();
     const month = now.getMonth();
     const date = now.getDate();
-    const set_background_change_time = 5;  //設定背景變換的秒數
+    const set_background_change_time = 30;  //設定背景變換的秒數
     let change_background_timer = 0;  //計時器
     let background_Image_index = 0;
 

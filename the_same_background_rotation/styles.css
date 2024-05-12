@@ -40,9 +40,7 @@ img {
 
 a {
     text-decoration: none;
-    color: var(--gray);
-    
-    transition: .2s ease-in-out;
+    color: #fdfdfde1;
 }
 
 #left-fixed-container {
@@ -50,7 +48,7 @@ a {
     top: 10%;
     left: 5%;
     width: 25%;
-    min-width: 350px;
+    min-width: 300px;
 }
 
 #fillInTodo {
@@ -114,13 +112,18 @@ a {
     transition: background-color;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 #deadLine {
     border: 0px;
     width: 165px;
     height: 30px;
     font-size: 1.5em;
     border-radius: 10px;
-    padding-left: 10px;
+    word-break:keep-all;
 }
 
 #addTodoBtn {
@@ -129,10 +132,10 @@ a {
     border-radius: 10px;
     font-size: 1em;
     height: 30px;
-    vertical-align: bottom;
-    margin-left: 7%;
     width: 30%;
+    margin-left: 3px;
     transition: background-color .5s normal;
+    text-align: center;
 }
 
 #addTodoBtn:hover {
