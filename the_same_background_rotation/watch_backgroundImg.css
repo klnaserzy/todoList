@@ -1,0 +1,40 @@
+* {
+    box-sizing: bordre-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    flex-wrap: wrap;
+    background-color: #6d6e72;
+    background-image: url(./background_image/pexels-photo-15061262.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+    transition: background-image 2s normal;
+}
+
+#container {
+    width: 80%;
+    margin: 60px auto auto auto;
+}
+
+#backToTodoListLink {
+    text-decoration: none;
+    color: #e2e2e2;
+    
+    transition: .2s ease-in-out;
+    border: 2px solid #a1b3fe;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    font-size: 22px;
+
+    transition:  .3s ease-in-out;
+}
+
+#backToTodoListLink:hover {
+    background-color: #5b64ee;
+    border: 2px solid #5b64ee;
+}
