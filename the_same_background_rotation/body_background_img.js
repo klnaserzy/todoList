@@ -1,3 +1,5 @@
+import { backgroundImages as backgroundImagePath } from "./fetchBackgroundImg.js";
+
 // DOM 元素
 const photographer = document.getElementById("photographer");
 const nowDate = document.getElementById("nowDate");
@@ -7,29 +9,7 @@ const yearMon = document.getElementById("yearMon");
 const allMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 // 背景圖片數據
-const backgroundImagePath = [
-    {
-        "imgUrl": "./background_image/pexels-photo-15061262.webp",
-        "photographer": "Marcel Löffler",
-        "photographer_url": "https://www.pexels.com/@marcel-loffler-366529953/"
-    }
-];
 
-// 練習fetch 當未能從 Pexels 獲取圖片時，從本地 JSON 文件中獲取
-const get_backgroundImagePath = () => {
-    fetch('./background_image_path.json')  //背景json檔案 其實數量不多可以直接用陣列儲存
-        .then(response => response.json())
-        .then(data => {
-            const {imageDatas} = data;
-            // 將從本地 JSON 文件獲取的圖片數據添加到 backgroundImagePath 中
-            imageDatas.forEach(imageData => {
-                backgroundImagePath.push(imageData);
-            })
-        })
-        .catch(error=> {
-            console.log("error: ", error);
-        });
-};
 // 更新時間和背景圖片
 const update_time_and_background = () => {
     const now = new Date();
@@ -47,7 +27,7 @@ const update_time_and_background = () => {
     const preloadImages = () => {
         const nextIndex = (background_Image_index + 1) % backgroundImagePath.length;
         const nextImage = new Image();
-        nextImage.src = backgroundImagePath[nextIndex].imgUrl;
+        nextImage.src = backgroundImagePath[nextIndex].imgPath;
     };
 
     preloadImages(); // 呼叫預加載函數
@@ -76,7 +56,7 @@ const update_time_and_background = () => {
                 ++background_Image_index;
                 background_Image_index %= backgroundImagePath.length;
                 // 更改背景圖片和攝影師信息
-                document.body.style.backgroundImage = `url(${backgroundImagePath[background_Image_index]["imgUrl"]})`;
+                document.body.style.backgroundImage = `url(${backgroundImagePath[background_Image_index]["imgPath"]})`;
                 photographer.innerHTML = `<a href="${backgroundImagePath[background_Image_index]["photographer_url"]}" target="_blank">photographer: ${backgroundImagePath[background_Image_index]["photographer"]}</a>`;
                 preloadImages(); // 預加載下一張背景圖片
             }
@@ -89,7 +69,6 @@ const update_time_and_background = () => {
 }
 
 update_time_and_background();  // 呼叫更新時間和背景函數
-get_backgroundImagePath();  //取得背景資料
 
 // 定義 API Key 和相關參數
 // 原本在使用的api 但會暴露api key 改為用express
@@ -122,7 +101,7 @@ get_backgroundImagePath();  //取得背景資料
 //         const {photos} = data;
 //         photos.forEach(el => {
 //             backgroundImagePath.push({
-//                 "imgUrl": el.src.landscape,
+//                 "imgPath": el.src.landscape,
 //                 "photographer": el.photographer,
 //                 "photographer_url": el.photographer_url
 //             })
