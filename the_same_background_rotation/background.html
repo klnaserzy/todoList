@@ -2,15 +2,41 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meat name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Pexels background</title>
         <link rel="stylesheet" href="./watch_backgroundImg.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     </head>
     <body>
-        <div id="container">
-            <div id="backToTodoListBackground">
-                <a id="backToTodoListLink" href="./index.html">Back to todoList</a>
+        <div id="modal-container" class="close">
+            <div class="icon">
+                <i id="modal-close" class="fa-solid fa-xmark fa-2xl"></i>
+            </div>
+            <div id="modal">
+                <img id="modalImg" src="./background_image/pexels-photo-15301418.jpeg" alt="landscape">
+                <div id="gotoLink">
+                    <a href="https://www.pexels.com/zh-tw/" class="pexelsLink" target="_blank">
+                        <img style="width: 100px;" src="https://images.pexels.com/lib/api/pexels-white.png" />
+                    </a>
+                    <a href="https://www.pexels.com/photo/sun-over-mountains-15061262/" class="imgUrl" target="_blank">
+                        <i class="fa fa-solid fa-image fa-2xl" title="watch background images"></i>
+                        <p>photo</p>
+                    </a>
+                    <a href="https://www.pexels.com/@marcel-loffler-366529953/" class="photographer" target="_blank">
+                        <i class="fa-solid fa-user fa-2xl"></i>
+                        <p>photographer</p>
+                    </a>
+                </div>
             </div>
         </div>
+        <div id="container">
+            <div id="backToTodoListBackground">
+                <a id="backToTodoListLink" href="./index.html" title="back"><i id="arrowLeft" class="fa-solid fa-arrow-left fa-lg"></i></a>
+            </div>
+            <div id="gallery">
+            </div>
+        </div>
+
+        <script src="./watch_backgroundImg.js" type="module"></script>
     </body>
 </html>

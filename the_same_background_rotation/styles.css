@@ -127,7 +127,7 @@ a {
 }
 
 #addTodoBtn {
-    background-color: #c2c2c2;
+    background-color: #d1d1d176;
     border: 0px;
     border-radius: 10px;
     font-size: 1em;
@@ -179,9 +179,17 @@ a {
     background-color: #999;
 }
 
-#yearMon {
+#timeContainer {
     margin-top: 6%;
     margin-left: 80%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#yearMon {
+    margin: 0 15px 0 80px;
+    white-space: pre;
     font-size: 16px;
     letter-spacing: 1px;
     color: #fff;
@@ -191,12 +199,11 @@ a {
 }
 
 #nowDate {
-    margin-left: 80%;
     font-size: 48px;
     letter-spacing: 1px;
     color: #fff;
     background-color:#31313181;
-    border-radius: 0px 7px 10px 10px;
+    border-radius: 10px 7px 10px 10px;
     padding: 2px 10px;
 }
 
