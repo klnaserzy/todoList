@@ -102,10 +102,10 @@ body {
 
 #modal {
     width: 80%;
+    max-width: 1100px;
     height: 90%;
     margin: auto;
     border-radius: 20px;
-    background-color: rgba(206, 237, 255, 0.76);
     padding: 15px 0 0 0;
     overflow-y: auto;
     display: flex;
@@ -127,14 +127,16 @@ a {
     display: flex;
     align-items: center;
     gap: 5px;
+    font-weight:800;
 }
 
 .imgUrl {
-    color: #1a6aff;
+    padding-left: 16px;
+    color: #6d98e8;
 }
 
 .photographer {
-    color: #6c22b2;
+    color: #c17eff;
 }
 
 .pexelsLink, .imgUrl, .photographer{
@@ -161,7 +163,7 @@ a {
 
 #modalImg {
     width: 90%;
-    max-width: 1000px;
+    max-width: 900px;
     height: auto;
     object-fit: contain;
     margin: 5px auto;
@@ -173,7 +175,7 @@ a {
     }
 
     ::-webkit-scrollbar-track {
-    background: #f1f1f100;
+    background: #f1f1f148;
     border-radius: 8px;
     margin: 15px 0 15px 0;
     }

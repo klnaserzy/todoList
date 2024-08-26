@@ -1,4 +1,5 @@
 import { backgroundImages as backgroundImagePath } from "./fetchBackgroundImg.js";
+import { pexels_API_KEY } from "./API_KEY.js";
 
 // DOM 元素
 const photographer = document.getElementById("photographer");
