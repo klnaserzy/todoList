@@ -1,6 +1,9 @@
 import { backgroundImages as backgroundImagePath } from "./fetchBackgroundImg.js";
 import { pexels_API_KEY } from "./API_KEY.js";
 
+const a = pexels_API_KEY;
+console.log(a.length);
+
 // DOM 元素
 const photographer = document.getElementById("photographer");
 const nowDate = document.getElementById("nowDate");
